@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 @Component
 public class StudentDaoListImpl implements StudentDao {
@@ -22,7 +22,7 @@ public class StudentDaoListImpl implements StudentDao {
     @Override
     public Student save(Student student) {
         if (student == null) throw new IllegalArgumentException("the student data was null");
-        if (student.getId() ==0) {
+        if (student.getId() == 0) {
             student.setId(StudentIdSequencer.nextId());
             students.add(student);
         }else{
